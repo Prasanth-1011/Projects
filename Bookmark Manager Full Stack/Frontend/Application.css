@@ -1,0 +1,261 @@
+:root {
+    --bg: #F0F0F0;
+    --fg: #333;
+    --card-bg: #FFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg);
+    color: var(--fg);
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#AuthSection {
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+#email,
+#password,
+#login,
+#signup {
+    height: 40px;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid var(--fg);
+    border-radius: 4px;
+    background: var(--card-bg);
+    color: var(--fg);
+    transition: background-color 0.2s ease;
+}
+
+#login,
+#signup {
+    width: 10ch;
+    color: white;
+    background: #007BFF;
+    border: 1px solid #007BFF;
+    transition: color ease-in-out 300ms, background ease-in-out 300ms, border ease-in-out 300ms;
+}
+
+.Auth-Buttons {
+    height: 100%;
+    display: flex;
+    gap: 10px;
+}
+
+#login,
+#signup {
+    flex: 1 1 0;
+}
+
+#login:hover,
+#signup:hover {
+    color: black;
+    background: #87CEEB;
+    border: 1px solid #87CEEB;
+}
+
+#email,
+#password {
+    flex: 1 1 100px;
+    min-width: 100px;
+    max-width: 30%;
+}
+
+.Title {
+    height: 10%;
+    padding: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Create-Tasks {
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 26px;
+}
+
+.Placeholder,
+.Create-Button,
+.Export-Button,
+.Import-Button,
+#logout {
+    height: 40px;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid var(--fg);
+    border-radius: 4px;
+    background: var(--card-bg);
+    color: var(--fg);
+    transition: background-color 0.2s ease;
+}
+
+.Create-Button,
+.Export-Button,
+.Import-Button,
+#logout {
+    color: white;
+    background: #007BFF;
+    border: 1px solid #007BFF;
+    transition: color ease-in-out 300ms, background ease-in-out 300ms, border ease-in-out 300ms;
+}
+
+.Placeholder {
+    flex: 1 1 200px;
+    min-width: 180px;
+    max-width: 70%;
+}
+
+.Create-Button:hover,
+.Export-Button:hover,
+.Import-Button:hover,
+#logout:hover {
+    color: black;
+    background: #87CEEB;
+    border: 1px solid #87CEEB;
+}
+
+.Page {
+    width: 100%;
+    height: 70%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
+    align-items: start;
+    padding: 20px 30px;
+    gap: 20px;
+    overflow-y: auto;
+}
+
+@media (max-width: 1024px) {
+    .Page {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .Page {
+        grid-template-columns: 1fr;
+    }
+}
+
+.Container {
+    background: var(--card-bg);
+    border: 1px solid var(--fg);
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 300px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.Head {
+    background: var(--fg);
+    color: var(--bg);
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    user-select: none;
+}
+
+.Head div {
+    flex-grow: 1;
+}
+
+.material-symbols-outlined {
+    cursor: pointer;
+    font-size: 24px;
+    user-select: none;
+}
+
+.BookmarkList {
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+.BookmarkList li {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 10px;
+    padding: 5px;
+    background: var(--bg);
+    border: 1px solid #CCC;
+    border-radius: 4px;
+}
+
+.BookmarkRow {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.BookmarkRow a {
+    flex: 1;
+    text-decoration: none;
+    color: blue;
+    word-break: break-word;
+}
+
+.Insert {
+    border: none;
+    border-top: 1px solid var(--fg);
+    padding: 10px;
+    background: var(--card-bg);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.Insert:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+input.BookmarkInput {
+    padding: 6px;
+    border: 1px solid #CCC;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.EditControls {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.EditControls button {
+    width: 50%;
+    font-size: 14px;
+    padding: 5px 0px;
+}
