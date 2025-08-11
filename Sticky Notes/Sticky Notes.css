@@ -1,0 +1,299 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    scrollbar-width: none;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.Home {
+    width: 100%;
+    height: 100%;
+    background: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.Navbar {
+    width: 100%;
+    height: 10%;
+    background: #708090;
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    padding: 0 50px;
+}
+
+.Notes-Section {
+    width: 100%;
+    height: 80%;
+    padding: 10px 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+
+.Note {
+    width: 20%;
+    height: 250px;
+    margin: 16px;
+    background: white;
+    border: 1px solid #CCC;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.Title {
+    height: 40px;
+    background: #708090;
+    color: white;
+    padding-left: 15px;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.Contents {
+    height: 170px;
+    padding: 5px 10px;
+    background: #5CB3FF;
+    color: white;
+    font-size: small;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    box-sizing: border-box;
+    scrollbar-width: none;
+}
+
+.Buttons {
+    height: 40px;
+    display: flex;
+    border-top: 1px solid #ccc;
+    flex-shrink: 0;
+}
+
+.Edit,
+.Delete {
+    width: 50%;
+    height: 100%;
+    border: none;
+    font-weight: bold;
+    background: #f0f0f0;
+    cursor: pointer;
+}
+
+.Bottom {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    background: #708090;
+    justify-content: center;
+}
+
+.Add-Note {
+    width: 100%;
+    height: 100%;
+    border: none;
+    padding: 10px 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: ButtonFace;
+    background-color: transparent;
+}
+
+.Add-Page,
+.Edit-Page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    background: white;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.Add-Title,
+.Edit-Title {
+    font-size: 30px;
+    padding: 10px;
+    background: #5CB3FF;
+    margin-bottom: 50px;
+}
+
+.Add-Container,
+.Edit-Container {
+    width: 100%;
+    font-size: 40px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.Add-Inputs,
+.Edit-Inputs {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+}
+
+.Inputs,
+.Edits {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #5CB3FF;
+    outline: none;
+    resize: none;
+}
+
+.Add-Buttons,
+.Edit-Buttons {
+    width: 60%;
+    display: flex;
+    margin-top: 25px;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.Click {
+    padding: 10px;
+    width: 20%;
+    border: none;
+    color: white;
+    background: red;
+    min-width: fit-content;
+}
+
+.Insert,
+.Change {
+    background: blue;
+    margin-right: 25px;
+}
+
+/* Responsive Design */
+
+@media screen and (max-width: 1100px) {
+    .Note {
+        width: 30%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .Note {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .Navbar {
+        font-size: 20px;
+    }
+
+    .Notes-Section {
+        padding: 12px;
+        flex-direction: row;
+    }
+
+    .Note {
+        width: 100%;
+        height: 125px;
+        flex-direction: column;
+    }
+
+    .Title {
+        height: 25px;
+        font-size: small;
+        padding: 0px 10px;
+    }
+
+    .Small {
+        display: flex;
+    }
+
+    .Contents {
+        width: 75%;
+        height: 100px;
+        padding: 10px;
+        font-size: small;
+    }
+
+    .Buttons {
+        width: 25%;
+        height: 100px;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .Edit,
+    .Delete {
+        width: 100%;
+        height: 50%;
+        font-size: small;
+    }
+
+    .Bottom {
+        background: white;
+    }
+
+    .Add-Note {
+        width: 40%;
+        font-size: medium;
+        background: #708090;
+    }
+
+    .Add-Page,
+    .Edit-Page {
+        justify-content: flex-start;
+    }
+
+    .Add-Title,
+    .Edit-Title {
+        margin-top: 20%;
+    }
+
+    .Add-Inputs,
+    .Edit-Inputs {
+        width: 90%;
+        display: flex;
+    }
+
+    .Add-Buttons,
+    .Edit-Buttons {
+        width: 90%;
+        margin-top: 30px;
+    }
+
+    .Click {
+        width: 100%;
+    }
+}
+
+@media screen and (max-height: 384px) {
+    .Note {
+        height: 85%;
+    }
+
+    .Add-Note {
+        width: 80%;
+        padding: 0px;
+    }
+}
