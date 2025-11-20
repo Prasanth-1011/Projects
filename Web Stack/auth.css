@@ -1,0 +1,772 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Source Code Pro', monospace;
+
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--secondary-color);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--hover-color);
+}
+
+body {
+    scrollbar-width: thin;
+    scrollbar-color: var(--secondary-color) transparent;
+}
+
+/* Ice Theme (Default) - Matching Stack.html */
+:root {
+    --primary-color: #0B2E33;
+    --secondary-color: #4F7C82;
+    --accent-color: #B8E3E9;
+    --text-primary: #0B2E33;
+    --text-secondary: #4F7C82;
+    --text-light: #B8E3E9;
+    --background: #E8F4F8;
+    --card-bg: #FFFFFF;
+    --input-bg: #F5FAFB;
+    --border-color: #B8E3E9;
+    --hover-color: #3A5F64;
+    --error-color: #D32F2F;
+    --success-color: #388E3C;
+    --shadow: rgba(11, 46, 51, 0.15);
+}
+
+/* Fire Theme - Matching Stack.html */
+body[data-theme="fire"] {
+    --primary-color: #1A0A0A;
+    --secondary-color: #8B2E2E;
+    --accent-color: #FFB74D;
+    --text-primary: #1A0A0A;
+    --text-secondary: #8B2E2E;
+    --text-light: #FFB74D;
+    --background: #FFF3E0;
+    --card-bg: #FFFFFF;
+    --input-bg: #FFF8F0;
+    --border-color: #FFB74D;
+    --hover-color: #6B1E1E;
+    --error-color: #D32F2F;
+    --success-color: #388E3C;
+    --shadow: rgba(26, 10, 10, 0.15);
+}
+
+/* Land Theme - Matching Stack.html */
+body[data-theme="land"] {
+    --primary-color: #1B3A1F;
+    --secondary-color: #5D8C61;
+    --accent-color: #C8E6A0;
+    --text-primary: #1B3A1F;
+    --text-secondary: #5D8C61;
+    --text-light: #C8E6A0;
+    --background: #F1F8E9;
+    --card-bg: #FFFFFF;
+    --input-bg: #F9FDF5;
+    --border-color: #C8E6A0;
+    --hover-color: #3D5C40;
+    --error-color: #D32F2F;
+    --success-color: #388E3C;
+    --shadow: rgba(27, 58, 31, 0.15);
+}
+
+html,
+body {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--background);
+    transition: background 0.3s ease;
+    padding: clamp(10px, 2vh, 15px);
+}
+
+.authContainer {
+    width: 100%;
+    max-width: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.authCard {
+    width: 100%;
+    background: var(--card-bg);
+    border-radius: clamp(12px, 2.5vh, 20px);
+    padding: clamp(18px, 3vh, 35px) clamp(18px, 3vw, 30px);
+    box-shadow: 0 8px 30px var(--shadow);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.authHeader {
+    text-align: center;
+    margin-bottom: clamp(15px, 2.5vh, 25px);
+}
+
+.authTitle {
+    font-size: clamp(1.6rem, 4vh, 2.2rem);
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: clamp(4px, 1vh, 8px);
+    transition: color 0.3s ease;
+    letter-spacing: 1px;
+}
+
+.authSubtitle {
+    font-size: clamp(0.8rem, 1.6vh, 0.95rem);
+    color: var(--text-secondary);
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.authForm {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(12px, 2vh, 16px);
+}
+
+.messageBox {
+    padding: clamp(8px, 1.5vh, 12px);
+    border-radius: 8px;
+    font-size: clamp(0.75rem, 1.4vh, 0.85rem);
+    font-weight: 600;
+    text-align: center;
+    display: none;
+    transition: all 0.3s ease;
+}
+
+.messageBox.show {
+    display: block;
+}
+
+.messageBox.error {
+    background-color: #FFEBEE;
+    color: var(--error-color);
+    border: 2px solid var(--error-color);
+}
+
+.messageBox.success {
+    background-color: #E8F5E9;
+    color: var(--success-color);
+    border: 2px solid var(--success-color);
+}
+
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(4px, 1vh, 7px);
+}
+
+.inputLabel {
+    font-size: clamp(0.75rem, 1.4vh, 0.9rem);
+    font-weight: 600;
+    color: var(--text-primary);
+    transition: color 0.3s ease;
+}
+
+.inputWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.inputIcon {
+    position: absolute;
+    left: clamp(10px, 2vw, 14px);
+    color: var(--secondary-color);
+    font-size: clamp(18px, 2.5vh, 22px);
+    transition: color 0.3s ease;
+    pointer-events: none;
+}
+
+.inputIconRight {
+    position: absolute;
+    right: clamp(10px, 2vw, 14px);
+    color: var(--secondary-color);
+    font-size: clamp(18px, 2.5vh, 22px);
+    cursor: pointer;
+    transition: color 0.3s ease;
+    user-select: none;
+}
+
+.inputIconRight:hover {
+    color: var(--primary-color);
+}
+
+.inputField {
+    width: 100%;
+    padding: clamp(10px, 1.8vh, 13px) clamp(40px, 6vw, 48px);
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    font-size: clamp(0.8rem, 1.6vh, 0.95rem);
+    font-weight: 500;
+    background: var(--input-bg);
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+    font-family: 'Source Code Pro', monospace;
+}
+
+.inputField:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    background: var(--card-bg);
+    box-shadow: 0 0 0 3px rgba(79, 124, 130, 0.15);
+}
+
+.inputField::placeholder {
+    color: var(--text-secondary);
+    opacity: 0.6;
+}
+
+.authButton {
+    width: 100%;
+    padding: clamp(11px, 2vh, 15px);
+    background: var(--primary-color);
+    color: var(--text-light);
+    border: none;
+    border-radius: 8px;
+    font-size: clamp(0.85rem, 1.6vh, 1rem);
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(6px, 1.2vh, 10px);
+    transition: all 0.3s ease;
+    margin-top: clamp(6px, 1.2vh, 10px);
+}
+
+.authButton:hover {
+    background: var(--hover-color);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px var(--shadow);
+}
+
+.authButton:active {
+    transform: translateY(0);
+}
+
+.buttonIcon {
+    font-size: clamp(18px, 2.5vh, 22px);
+}
+
+.authFooter {
+    text-align: center;
+    margin-top: clamp(12px, 2vh, 18px);
+}
+
+.authLink {
+    font-size: clamp(0.75rem, 1.4vh, 0.85rem);
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.authLink a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.authLink a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+.themeSelector {
+    display: flex;
+    gap: clamp(6px, 1.2vh, 10px);
+    justify-content: center;
+    margin-bottom: clamp(12px, 2vh, 18px);
+}
+
+.themeButton {
+    width: clamp(34px, 5vh, 42px);
+    height: clamp(34px, 5vh, 42px);
+    border-radius: 50%;
+    border: 2px solid var(--border-color);
+    background: var(--card-bg);
+    color: var(--secondary-color);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px var(--shadow);
+}
+
+.themeButton:hover {
+    background: var(--secondary-color);
+    color: var(--text-light);
+    transform: scale(1.15);
+    box-shadow: 0 4px 15px var(--shadow);
+}
+
+.themeButton.active {
+    background: var(--primary-color);
+    color: var(--text-light);
+    border-color: var(--primary-color);
+    transform: scale(1.1);
+}
+
+.themeButton .material-icons {
+    font-size: clamp(18px, 3vh, 24px);
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .authCard {
+        max-width: 480px;
+        padding: 32px 28px;
+    }
+
+    .authTitle {
+        font-size: 2rem;
+    }
+
+    .themeSelector {
+        gap: 10px;
+    }
+
+    .themeButton {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+    body {
+        padding: 12px;
+    }
+
+    .authCard {
+        padding: 25px 20px;
+        border-radius: 15px;
+    }
+
+    .authTitle {
+        font-size: 1.7rem;
+    }
+
+    .authSubtitle {
+        font-size: 0.85rem;
+    }
+
+    .inputField {
+        font-size: 0.9rem;
+        padding: 11px 44px;
+    }
+
+    .authButton {
+        padding: 12px;
+        font-size: 0.9rem;
+    }
+
+    .themeSelector {
+        gap: 8px;
+        margin-bottom: 16px;
+    }
+
+    .themeButton {
+        width: 38px;
+        height: 38px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    html,
+    body {
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    body {
+        padding: 8px;
+        align-items: center;
+    }
+
+    .authContainer {
+        max-width: 100%;
+    }
+
+    .authCard {
+        padding: 16px;
+        border-radius: 12px;
+    }
+
+    .authHeader {
+        margin-bottom: 12px;
+    }
+
+    .authTitle {
+        font-size: 1.5rem;
+        margin-bottom: 4px;
+    }
+
+    .authSubtitle {
+        font-size: 0.8rem;
+    }
+
+    .authForm {
+        gap: 10px;
+    }
+
+    .inputGroup {
+        gap: 4px;
+    }
+
+    .inputLabel {
+        font-size: 0.75rem;
+    }
+
+    .inputField {
+        padding: 9px 38px;
+        font-size: 0.85rem;
+        border-radius: 7px;
+    }
+
+    .inputIcon {
+        left: 11px;
+        font-size: 18px;
+    }
+
+    .inputIconRight {
+        right: 11px;
+        font-size: 18px;
+    }
+
+    .authButton {
+        padding: 10px;
+        font-size: 0.85rem;
+        border-radius: 7px;
+        margin-top: 6px;
+    }
+
+    .buttonIcon {
+        font-size: 18px;
+    }
+
+    .authFooter {
+        margin-top: 12px;
+    }
+
+    .authLink {
+        font-size: 0.75rem;
+    }
+
+    .themeSelector {
+        gap: 6px;
+        margin-bottom: 12px;
+    }
+
+    .themeButton {
+        width: 34px;
+        height: 34px;
+    }
+
+    .themeButton .material-icons {
+        font-size: 18px;
+    }
+
+    .messageBox {
+        padding: 7px;
+        font-size: 0.75rem;
+        border-radius: 6px;
+    }
+}
+
+@media (max-width: 360px) {
+    body {
+        padding: 6px;
+    }
+
+    .authCard {
+        padding: 14px;
+        border-radius: 10px;
+    }
+
+    .authTitle {
+        font-size: 1.4rem;
+    }
+
+    .authSubtitle {
+        font-size: 0.75rem;
+    }
+
+    .inputField {
+        padding: 8px 36px;
+        font-size: 0.8rem;
+    }
+
+    .inputIcon,
+    .inputIconRight {
+        font-size: 16px;
+        left: 10px;
+    }
+
+    .inputIconRight {
+        right: 10px;
+        left: auto;
+    }
+
+    .authButton {
+        padding: 9px;
+        font-size: 0.8rem;
+    }
+
+    .themeButton {
+        width: 32px;
+        height: 32px;
+    }
+
+    .themeButton .material-icons {
+        font-size: 16px;
+    }
+}
+
+@media (max-height: 700px) {
+    .authCard {
+        padding: 16px 20px;
+    }
+
+    .authHeader {
+        margin-bottom: 12px;
+    }
+
+    .authTitle {
+        font-size: 1.6rem;
+        margin-bottom: 4px;
+    }
+
+    .authSubtitle {
+        font-size: 0.8rem;
+    }
+
+    .authForm {
+        gap: 10px;
+    }
+
+    .inputGroup {
+        gap: 4px;
+    }
+
+    .inputLabel {
+        font-size: 0.75rem;
+    }
+
+    .inputField {
+        padding: 9px 40px;
+        font-size: 0.85rem;
+    }
+
+    .authButton {
+        padding: 10px;
+        margin-top: 6px;
+    }
+
+    .authFooter {
+        margin-top: 12px;
+    }
+
+    .themeSelector {
+        margin-bottom: 12px;
+        gap: 6px;
+    }
+
+    .themeButton {
+        width: 34px;
+        height: 34px;
+    }
+
+    .messageBox {
+        padding: 7px;
+    }
+}
+
+@media (max-height: 600px) {
+    body {
+        padding: 6px;
+    }
+
+    .authCard {
+        padding: 12px 18px;
+    }
+
+    .authHeader {
+        margin-bottom: 10px;
+    }
+
+    .authTitle {
+        font-size: 1.4rem;
+        margin-bottom: 3px;
+    }
+
+    .authSubtitle {
+        font-size: 0.75rem;
+    }
+
+    .authForm {
+        gap: 8px;
+    }
+
+    .inputGroup {
+        gap: 3px;
+    }
+
+    .inputLabel {
+        font-size: 0.7rem;
+    }
+
+    .inputField {
+        padding: 8px 36px;
+        font-size: 0.8rem;
+    }
+
+    .inputIcon,
+    .inputIconRight {
+        font-size: 16px;
+    }
+
+    .authButton {
+        padding: 8px;
+        font-size: 0.8rem;
+        margin-top: 4px;
+    }
+
+    .buttonIcon {
+        font-size: 16px;
+    }
+
+    .authFooter {
+        margin-top: 10px;
+    }
+
+    .authLink {
+        font-size: 0.7rem;
+    }
+
+    .themeSelector {
+        margin-bottom: 10px;
+        gap: 5px;
+    }
+
+    .themeButton {
+        width: 30px;
+        height: 30px;
+    }
+
+    .themeButton .material-icons {
+        font-size: 15px;
+    }
+
+    .messageBox {
+        padding: 6px;
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-height: 500px) and (orientation: landscape) {
+    body {
+        padding: 8px 15px;
+        align-items: flex-start;
+    }
+
+    .authCard {
+        padding: 12px 20px;
+        max-width: 85%;
+        margin: 10px auto;
+    }
+
+    .authHeader {
+        margin-bottom: 8px;
+    }
+
+    .authTitle {
+        font-size: 1.3rem;
+        margin-bottom: 2px;
+    }
+
+    .authSubtitle {
+        font-size: 0.7rem;
+    }
+
+    .authForm {
+        gap: 7px;
+    }
+
+    .inputGroup {
+        gap: 3px;
+    }
+
+    .inputLabel {
+        font-size: 0.7rem;
+    }
+
+    .inputField {
+        padding: 7px 36px;
+        font-size: 0.75rem;
+    }
+
+    .authButton {
+        padding: 7px;
+        margin-top: 4px;
+        font-size: 0.75rem;
+    }
+
+    .authFooter {
+        margin-top: 8px;
+    }
+
+    .themeSelector {
+        margin-bottom: 8px;
+        gap: 5px;
+    }
+
+    .themeButton {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+@media (prefers-contrast: high) {
+
+    .inputField,
+    .authButton {
+        border-width: 3px;
+    }
+
+    .authCard {
+        border: 2px solid var(--primary-color);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

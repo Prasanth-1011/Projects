@@ -1,0 +1,355 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Udemy Clone</title>
+    <link rel="stylesheet" href="./Styles/Fonts.css">
+    <link rel="stylesheet" href="./Styles/Styles.css">
+    <link rel="stylesheet" href="./Styles/Courses.css">
+    <link rel="icon" href="./Assets/Udemy Icon.png" type="image/png">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+
+
+</head>
+
+<body>
+    <!-- Navbar -->
+    <div class="navbar align-center">
+        <a href="index.html"><img src="./Assets/Udemy Logo.svg" alt="Udemy Logo" width="90px" height="40px"></a>
+        <p style="font-size: 14px; font-weight: 100; cursor: pointer;">Explore</p>
+
+        <div class="navbar__search align-center">
+            <i class="material-icons flex-center">search</i>
+            <input type="text" placeholder="Search for anything">
+        </div>
+
+        <div class="navbar__links align-center">
+            <li>Plans & Pricing</li>
+            <li>Udemy Business</li>
+            <li>Teach on Udemy</li>
+            <li>My learning</li>
+        </div>
+
+        <div class="navbar__icons align-center">
+            <i class="material-symbols-outlined favorite">favorite</i>
+            <i class="material-symbols-outlined">shopping_cart</i>
+            <i class="material-symbols-outlined notifications">notifications</i>
+        </div>
+
+        <div class="navbar__profile flex-center" style="cursor: pointer;">JD</div>
+    </div>
+
+    <!-- Categories -->
+    <div class="category align-center">
+        <li>Development</li>
+        <li>Business</li>
+        <li>Finance & Accounting</li>
+        <li>Software</li>
+        <li>Office Productivity</li>
+        <li>Personal Development</li>
+        <li>Design</li>
+        <li>Marketing</li>
+        <li>Health & Fitness</li>
+        <li>Music</li>
+    </div>
+
+    <!-- User -->
+    <div class="header align-center">
+        <div class="header__profile flex-center">JD</div>
+        <div class="header__text">
+            <p>Welcome back, John Doe</p>
+            <p class="header__text__occupation">
+                Web Developer
+                <a href="" style="font-weight: bold;">Edit occupation and interests</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Slide -->
+    <div class="slide flex-center">
+        <input type="checkbox" class="slide__toggle__button">
+
+        <div class="slide__background align-center">
+            <div class="slide__banner">
+                <h1>Subscribe to the best of Udemy</h1>
+                <p>Get conditioned with latest skills on learning with Udemy courses.</p>
+                <button type="button">Learn more</button>
+            </div>
+            <div class="slide__toggle flex-center">
+                <span class="material-symbols-outlined chevron_right flex-center" style="color: black">
+                    chevron_right
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Learning -->
+        <div class="learning">
+            <div class="learning__heading align-center">
+                <h1>Let's start learning</h1>
+                <h3>My learning</h3>
+            </div>
+
+            <div class="learning__courses">
+                <div class="course__card">
+                    <img src="Assets/Card 101.png" alt="">
+                    <div class="course__details">
+                        <h5>Java Mastery</h5>
+                        <div>
+                            <h3>52. Habit Tracker Program</h3>
+                            <p>Lecture - 7m</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course__card">
+                    <img src="Assets/Card 102.png" alt="">
+                    <div class="course__details">
+                        <h5>React Crash Course</h5>
+                        <div>
+                            <h3>1. Course Requirements</h3>
+                            <p>Lecture - 0m</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course__card">
+                    <img src="Assets/Card 103.png" alt="">
+                    <div class="course__details">
+                        <h5>Speaking And Presentation Skills</h5>
+                        <div>
+                            <h3>1. Understanding Effective Communication</h3>
+                            <p style="margin-top: 40px;">Lecture - 0m</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="popular">
+            <h1>Popular courses</h1>
+            <div class="popular__container">
+                <div class="popular__card">
+                    <img src="./Assets/Course 101.png" alt="">
+                    <h4>Angular Framework - The Complete Guide</h4>
+                    <p>Maximilian Schwarzmuller</p>
+                    <span class="align-center gap">
+                        <h5>4.6</h5>
+                        <p>⭐⭐⭐⭐ (7862)</p>
+                    </span>
+                    <span class="align-center gap">
+                        <h4>₹519</h4>
+                        <p><del>₹2059</del></p>
+                    </span>
+                </div>
+
+                <div class="popular__card">
+                    <img src="./Assets/Course 102.png" alt="">
+                    <h4>Web Development For Creating Dashboards</h4>
+                    <p>Stephen Grider</p>
+                    <span class="align-center gap">
+                        <h5>4.0</h5>
+                        <p>⭐⭐⭐⭐ (1212)</p>
+                    </span>
+                    <span class="align-center gap">
+                        <h4>₹239</h4>
+                        <p><del>₹1049</del></p>
+                    </span>
+                </div>
+
+                <div class="popular__card">
+                    <img src="./Assets/Course 103.png" alt="">
+                    <h4>Node Master Class - Build REST API</h4>
+                    <p>Mosh Hamedani</p>
+                    <span class="align-center gap">
+                        <h5>5.0</h5>
+                        <p>⭐⭐⭐⭐⭐ (2135)</p>
+                    </span>
+                    <span class="align-center gap">
+                        <h4>₹729</h4>
+                        <p><del>₹3159</del></p>
+                    </span>
+                </div>
+
+                <div class="popular__card">
+                    <img src="./Assets/Course 104.png" alt="">
+                    <h4>Modern React With Redux - Web Development</h4>
+                    <p>Stephen Grider</p>
+                    <span class="align-center gap">
+                        <h5>4.6</h5>
+                        <p>⭐⭐⭐⭐ (159)</p>
+                    </span>
+                    <span class="align-center gap">
+                        <h4>₹689</h4>
+                        <p><del>₹4139</del></p>
+                    </span>
+                </div>
+
+                <div class="popular__card">
+                    <img src="./Assets/Course 105.png" alt="">
+                    <h4>Microservices With Node And React</h4>
+                    <p>Stephen Grider</p>
+                    <span class="align-center gap">
+                        <h5>4.7</h5>
+                        <p>⭐⭐⭐⭐ (1874)</p>
+                    </span>
+                    <span class="align-center gap">
+                        <h4>₹839</h4>
+                        <p><del>₹5059</del></p>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="feature">
+            <h1>Featured courses</h1>
+            <div class="feature__container">
+                <div class="feature__card">
+                    <img src="./Assets/Course 106.png" alt="">
+                    <h4>Ubuntu Linux Server Administration Basics</h4>
+                    <p>Cody Ray Miller</p>
+                    <span class="align-center gap">
+                        <h5>4.6</h5>
+                        <p>⭐⭐⭐⭐ (3509)</p>
+                    </span>
+                    <span class="align-center gap">
+                        <h4>₹699</h4>
+                        <p><del>₹3729</del></p>
+                    </span>
+                </div>
+
+                <div class="feature__card">
+                    <img src="./Assets/Course 107.png" alt="">
+                    <h4>The Project Management Course: Beginner Level</h4>
+                    <p>365 Careers</p>
+                    <span class="align-center gap">
+                        <h5>4.6</h5>
+                        <p>⭐⭐⭐⭐ (82834)</p>
+                    </span>
+                    <span class="align-center gap">
+                        <h4>₹639</h4>
+                        <p><del>₹3869</del></p>
+                    </span>
+                </div>
+
+                <div class="feature__card">
+                    <img src="./Assets/Course 108.png" alt="">
+                    <h4>HTML CSS JavaScript With Live Server</h4>
+                    <p>Stephen Grider</p>
+                    <span class="align-center gap">
+                        <h5>5.0</h5>
+                        <p>⭐⭐⭐⭐⭐ (2135)</p>
+                    </span>
+                    <span class="align-center gap">
+                        <h4>₹299</h4>
+                        <p><del>₹799</del></p>
+                    </span>
+                </div>
+
+                <div class="feature__card">
+                    <img src="./Assets/Course 109.png" alt="">
+                    <h4>Master Web & Mobile Design: Figma Essentials</h4>
+                    <p>Chetan Pujari</p>
+                    <span class="align-center gap">
+                        <h5>4.6</h5>
+                        <p>⭐⭐⭐⭐ (596)</p>
+                    </span>
+                    <span class="align-center gap">
+                        <h4>₹529</h4>
+                        <p><del>₹2419</del></p>
+                    </span>
+                </div>
+
+                <div class="feature__card">
+                    <img src="./Assets/Course 110.png" alt="">
+                    <h4>Mastering Productivity, Time Management, Goal Setting</h4>
+                    <p>Jeremy Badder</p>
+                    <span class="align-center gap">
+                        <h5>4.3</h5>
+                        <p>⭐⭐⭐⭐ (82)</p>
+                    </span>
+                    <span class="align-center gap">
+                        <h4>₹519</h4>
+                        <p><del>₹799</del></p>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="recommend">
+            <h2>Topics recommended for you</h2>
+            <div class="recommend__course">
+                <li>JavaScript</li>
+                <li>Tailwind CSS</li>
+                <li>React</li>
+                <li>React Hooks</li>
+                <li>Redux</li>
+                <li>Datbase</li>
+                <li>Artificial Intelligence</li>
+                <li>Node</li>
+                <li>Express</li>
+                <li>Claude</li>
+            </div>
+        </div>
+    </div>
+
+    <div class="source">
+        <div class="source__about">
+            <h3>About</h3>
+            <ul>
+                <li>About us</li>
+                <li>Careers</li>
+                <li>Contact us</li>
+                <li>Blog</li>
+                <li>Investors</li>
+            </ul>
+        </div>
+        <div class="source__discover">
+            <h3>Discover Udemy</h3>
+            <ul>
+                <li>Get the app</li>
+                <li>Teach on Udemy</li>
+                <li>Plans and Pricing</li>
+                <li>Affiliate</li>
+                <li>Help and Support</li>
+            </ul>
+        </div>
+        <div class="source__business">
+            <h3>Udemy for Business</h3>
+            <ul>
+                <li>Udemy Business</li>
+            </ul>
+        </div>
+        <div class="source__accessibility">
+            <h3>Legal & Accessibility</h3>
+            <ul>
+                <li>Accessibility Statement</li>
+                <li>Privacy policy</li>
+                <li>Sitemap</li>
+                <li>Terms</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer align-center">
+        <div class="footer__logo align-center">
+            <a href="index.html"><img src="./Assets/Udemy Dark Logo.svg" alt="Udemy Logo" width="90px"
+                    height="40px"></a>
+            <p style="font-size: 14px; font-weight: 100; margin-top: 8px;">&copy 2025 Udemy Clone</p>
+        </div>
+
+        <p class="footer__cookie">Cookie settings</p>
+
+        <div class="footer__language align-center">
+            <span class="material-symbols-outlined">
+                language
+            </span>
+            <p>English</p>
+        </div>
+    </div>
+</body>
+
+</html>
