@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+@theme {
+    --color-primary: var(--color-white);
+    --color-secondary: var(--color-slate-950);
+    --color-tertiary: var(--color-amber-300);
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+* {
+    box-sizing: border-box;
+    font-family: system-ui, Helvetica, Arial, sans-serif;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100;
+}
+
+h2 {
+    @apply text-2xl text-transparent transition-colors duration-300;
+}
+
+h2.view {
+    @apply text-2xl text-black;
+}
+
+.button {
+    @apply bg-tertiary text-secondary hover:border-secondary flex h-10 w-10 cursor-pointer items-center justify-center rounded-[100%] border-4 border-transparent text-3xl font-bold transition-all duration-300 sm:h-14 sm:w-14;
+}
